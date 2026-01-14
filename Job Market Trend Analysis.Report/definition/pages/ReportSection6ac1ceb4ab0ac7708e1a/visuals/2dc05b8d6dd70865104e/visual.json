@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "2dc05b8d6dd70865104e",
+  "position": {
+    "x": 640,
+    "y": 214.95440729483283,
+    "z": 1000,
+    "height": 248.0243161094225,
+    "width": 640
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Posting Count"
+                }
+              },
+              "queryRef": "_Measures.Posting Count"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Job Postings"
+                    }
+                  },
+                  "Property": "Company Size"
+                }
+              },
+              "queryRef": "Job Postings.Company Size",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Years of Experience"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(Job Postings.Years of Experience)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Job Postings"
+                      }
+                    },
+                    "Property": "Years of Experience"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

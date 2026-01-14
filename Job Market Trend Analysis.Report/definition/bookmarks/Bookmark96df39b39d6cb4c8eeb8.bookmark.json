@@ -1,0 +1,975 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "Jobs",
+  "name": "Bookmark96df39b39d6cb4c8eeb8",
+  "options": {
+    "targetVisualNames": []
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSectiona0affef704cd08441d1a",
+    "filters": {
+      "byExpr": [
+        {
+          "name": "Filter3dc0251e395e27d1bc29",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "j",
+                "Entity": "Job Postings",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "j"
+                            }
+                          },
+                          "Property": "Job Title"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Business Analyst'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Data Analyst'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Data Architect'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Data Engineer'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Data Scientist'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Machine Learning Engineer'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Research Scientist'"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'Data Science Manager'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Job Postings"
+                }
+              },
+              "Property": "Job Title"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ReportSectiona0affef704cd08441d1a": {
+        "visualContainers": {
+          "aeb7483a8ea7916dc180": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "24f7ef4e19008d3508b0",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Job Postings"
+                            }
+                          },
+                          "Property": "Years of Experience"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "71ddd010e91d1b6d0510",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Position Level"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "columnChart",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Job Postings"
+                            }
+                          },
+                          "Property": "Years of Experience"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Position Level"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "74c85c314e0bdec0a5a3": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "cd7fb3a602a98347607a",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Job Postings"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Job Posting Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d6662d3dc05881ab44b3",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Job Postings"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Job Posting Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Quarter"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "427d7365c78c01a4a8b8",
+                  "type": "Categorical",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Job Postings"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Job Posting Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Month"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "af3d3581d49a16dc6a3d",
+                  "type": "Advanced",
+                  "expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Job Postings"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Job Posting Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Day"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a23f856800ee2c2b054a",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Job Postings"
+                            }
+                          },
+                          "Property": "Job Posting ID"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ecf407d22ed0532904a5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Position Level"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "stackedAreaChart",
+              "objects": {},
+              "activeProjections": {
+                "Category": [
+                  {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "PropertyVariationSource": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Job Postings"
+                                }
+                              },
+                              "Name": "Variation",
+                              "Property": "Job Posting Date"
+                            }
+                          },
+                          "Hierarchy": "Date Hierarchy"
+                        }
+                      },
+                      "Level": "Year"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "bd8719b58cc1e0604920": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "e9a84c445004e30a936c",
+                  "type": "TopN",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "subquery",
+                        "Expression": {
+                          "Subquery": {
+                            "Query": {
+                              "Version": 2,
+                              "From": [
+                                {
+                                  "Name": "j1",
+                                  "Entity": "Job Skills",
+                                  "Type": 0
+                                },
+                                {
+                                  "Name": "_",
+                                  "Entity": "_Measures",
+                                  "Type": 0
+                                }
+                              ],
+                              "Select": [
+                                {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "j1"
+                                      }
+                                    },
+                                    "Property": "Job Skills"
+                                  },
+                                  "Name": "field"
+                                }
+                              ],
+                              "OrderBy": [
+                                {
+                                  "Direction": 2,
+                                  "Expression": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "_"
+                                        }
+                                      },
+                                      "Property": "Skill Count"
+                                    }
+                                  }
+                                }
+                              ],
+                              "Top": 20
+                            }
+                          }
+                        },
+                        "Type": 2
+                      },
+                      {
+                        "Name": "j1",
+                        "Entity": "Job Skills",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "j1"
+                                    }
+                                  },
+                                  "Property": "Job Skills"
+                                }
+                              }
+                            ],
+                            "Table": {
+                              "SourceRef": {
+                                "Source": "subquery"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Skills"
+                        }
+                      },
+                      "Property": "Job Skills"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "215c291d11d027d8484b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Title"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ac436440c67337009132",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Job Skills"
+                            }
+                          },
+                          "Property": "Job Skills"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "treemap",
+              "objects": {},
+              "activeProjections": {
+                "Group": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Title"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7e900bb871c0e73218a2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9e27f2e181581123ec26",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Title"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Title"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "1d2eb9c004992a6ded55": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "5073ba54007d50c96099",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Position Level"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Position Level"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "6482a0fb7a892b0e24eb": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "a9a5390c2d463c0db91b",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Company Name"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Company Name"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "add968380407d8704020": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "dda9be9d2b090053dce2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Company Size"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Company Size"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "09b7cc05cd7b617c00d2": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "31254831ec14e2cbc1db",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Company Industry"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Company Industry"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "cb381a5bb52e1d8d3a3c": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "96711aa8d40b17eaca1a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Posting Date"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Between'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Posting Date"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Postings"
+                        }
+                      },
+                      "Property": "Job Posting Date"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "786c5c268eea471cb4a1": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8980295d6901231957bc",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Posting Count"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "Posting Count"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "894835cc38edc5505c42": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "8120792030067ee2adbe",
+                  "type": "Advanced",
+                  "expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Job Postings"
+                            }
+                          },
+                          "Property": "Years of Experience"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "card",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Job Postings"
+                            }
+                          },
+                          "Property": "Years of Experience"
+                        }
+                      },
+                      "Function": 1
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "objects": {}
+  }
+}

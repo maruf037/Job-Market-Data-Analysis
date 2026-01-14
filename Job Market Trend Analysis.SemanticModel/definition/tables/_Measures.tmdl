@@ -1,0 +1,38 @@
+table _Measures
+	lineageTag: 60d829aa-5ad6-45ea-9f7d-9fc821e0a84f
+
+	measure 'Average of Average Pay' = AVERAGE('Job Postings'[Average Pay])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e404623b-91d5-4980-92e2-0ddf02c34794
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Skill Count' = COUNT('Job Skills'[Job Skills])
+		formatString: 0
+		lineageTag: 9e77076c-e646-4a34-ab91-18e1f74d9056
+
+	measure 'Posting Count' = COUNT('Job Postings'[Job Posting ID])
+		formatString: 0
+		lineageTag: 370afa08-a027-4d50-86ba-50999735e127
+
+	measure '% Skill in Posting' = [Skill Count] / [Posting Count]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ee379621-0d25-4a37-9fa9-1cafc64ebafd
+
+	column Column
+		formatString: 0
+		lineageTag: 00900dee-0aea-494f-a96b-b4b58586afa6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures-ffd59674-8198-4039-a4cc-c4fcc58f310f = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 74da30e0f6f94676bf087326e4f72333
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

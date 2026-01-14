@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Job Postings","Job Skills"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_f414077b-c524-4e85-a79f-f1062ee8d21f
+ref table 'Job Postings'
+ref table LocalDateTable_60fc5bc5-da6a-4999-87a8-ac18fdd96097
+ref table _Measures
+ref table 'Job Skills'
+
+ref cultureInfo en-US
+

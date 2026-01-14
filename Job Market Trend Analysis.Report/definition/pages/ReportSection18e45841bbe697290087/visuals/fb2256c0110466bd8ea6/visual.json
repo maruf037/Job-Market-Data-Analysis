@@ -1,0 +1,80 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "fb2256c0110466bd8ea6",
+  "position": {
+    "x": 650.69908814589667,
+    "y": 9.72644376899696,
+    "z": 10000,
+    "height": 107.96352583586626,
+    "width": 230.51671732522797
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Job Skills"
+                        }
+                      },
+                      "Property": "Job Skills"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Min(Job Skills.Job Skills)",
+              "displayName": "Distinct Count of Skills"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Job Skills"
+                      }
+                    },
+                    "Property": "Job Skills"
+                  }
+                },
+                "Function": 2
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

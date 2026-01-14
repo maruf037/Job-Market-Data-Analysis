@@ -1,0 +1,43 @@
+table 'Job Skills'
+	lineageTag: fa39d4a2-c3db-42c2-b322-6b70bd81670a
+
+	column 'Job Skills'
+		dataType: string
+		lineageTag: c866d6df-3408-475c-b889-ceb5cc610467
+		summarizeBy: none
+		sourceColumn: Job Skills
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Job Posting ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: f8197042-218e-47a9-80d7-eb2f0684d292
+		summarizeBy: none
+		sourceColumn: Job Posting ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Job Skills-66186dc3-aef4-477a-a218-0fb27098f78a' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:\Power BI Projects\3. Job Market Data Analysis\Assets\Datasets\job_postings.csv"),[Delimiter=",", Columns=18, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"", Int64.Type}, {"Job Posting ID", Int64.Type}, {"Job Posting Date", type date}, {"Job Title", type text}, {"Job Title Full", type text}, {"Job Title Additional Info", type text}, {"Job Position Type", type text}, {"Job Position Level", type text}, {"Years of Experience", Int64.Type}, {"Job Skills", type text}, {"Job Location", type text}, {"Minimum Pay", Int64.Type}, {"Maximum Pay", Int64.Type}, {"Pay Rate", type text}, {"Number of Applicants", Int64.Type}, {"Company Name", type text}, {"Company Industry", type text}, {"Company Size", type text}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Job Skills", "Job Posting ID"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Other Columns","[","",Replacer.ReplaceText,{"Job Skills"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","]","",Replacer.ReplaceText,{"Job Skills"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","'","",Replacer.ReplaceText,{"Job Skills"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2"," ","",Replacer.ReplaceText,{"Job Skills"}),
+				    #"Split Column by Delimiter" = Table.ExpandListColumn(Table.TransformColumns(#"Replaced Value3", {{"Job Skills", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Job Skills"),
+				    #"Filtered Rows" = Table.SelectRows(#"Split Column by Delimiter", each ([Job Skills] <> "")),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Filtered Rows",{{"Job Skills", type text}}),
+				    #"Replaced Value4" = Table.ReplaceValue(#"Changed Type1","powerbi","power_bi",Replacer.ReplaceText,{"Job Skills"})
+				in
+				    #"Replaced Value4"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,215 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY21SU11",
+      "reportVersionAtImport": {
+        "visual": "1.8.64",
+        "report": "2.0.64",
+        "page": "1.3.64"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter3dc0251e395e27d1bc29",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Job Postings"
+              }
+            },
+            "Property": "Job Title"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "j",
+              "Entity": "Job Postings",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "j"
+                          }
+                        },
+                        "Property": "Job Title"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Business Analyst'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Data Analyst'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Data Architect'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Data Engineer'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Data Scientist'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Machine Learning Engineer'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Research Scientist'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Data Science Manager'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY21SU11",
+          "path": "BaseThemes/CY21SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "home_background07562932764358798.png",
+          "path": "home_background07562932764358798.png",
+          "type": "Image"
+        },
+        {
+          "name": "jobs_background637922063741704.png",
+          "path": "jobs_background637922063741704.png",
+          "type": "Image"
+        },
+        {
+          "name": "skills_background08074803291783428.png",
+          "path": "skills_background08074803291783428.png",
+          "type": "Image"
+        },
+        {
+          "name": "company_background7931783986267693.png",
+          "path": "company_background7931783986267693.png",
+          "type": "Image"
+        },
+        {
+          "name": "jobs-icon6812801923563587.png",
+          "path": "jobs-icon6812801923563587.png",
+          "type": "Image"
+        },
+        {
+          "name": "skills-icon21480069922662492.png",
+          "path": "skills-icon21480069922662492.png",
+          "type": "Image"
+        },
+        {
+          "name": "company-icon9482891289070781.png",
+          "path": "company-icon9482891289070781.png",
+          "type": "Image"
+        },
+        {
+          "name": "home-icon5634270668961081.png",
+          "path": "home-icon5634270668961081.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true
+  }
+}

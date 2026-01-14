@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Job Market Trend Analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a97e4e6e-34c9-4144-b1e9-7552297fad60"
+  }
+}

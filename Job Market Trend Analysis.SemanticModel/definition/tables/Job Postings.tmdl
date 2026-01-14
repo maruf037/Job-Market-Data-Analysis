@@ -1,0 +1,210 @@
+table 'Job Postings'
+	lineageTag: a9e51484-ab73-4145-9254-0d0da21cb261
+
+	column Column1
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b23bbef-778a-482e-8fe1-8808c145d513
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Posting ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: df434631-d328-45da-a51a-73f5cd2610e2
+		summarizeBy: none
+		sourceColumn: Job Posting ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Posting Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fd2268b5-a586-40c4-b025-d947577cd46a
+		summarizeBy: none
+		sourceColumn: Job Posting Date
+
+		variation Variation
+			isDefault
+			relationship: 2d07b956-4e6e-437e-b369-4ca7b42df8e7
+			defaultHierarchy: LocalDateTable_60fc5bc5-da6a-4999-87a8-ac18fdd96097.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Job Title'
+		dataType: string
+		lineageTag: f7744b99-0f91-4a13-8a3d-3ae228eb5b29
+		summarizeBy: none
+		sourceColumn: Job Title
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Job Title Full'
+		dataType: string
+		lineageTag: 7b4cd555-3aad-4a10-ad49-591caa764604
+		summarizeBy: none
+		sourceColumn: Job Title Full
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Job Title Additional Info'
+		dataType: string
+		lineageTag: 475ec898-bc90-41d5-8788-60f657787307
+		summarizeBy: none
+		sourceColumn: Job Title Additional Info
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Job Position Type'
+		dataType: string
+		lineageTag: 09fddab7-631d-4926-ad53-7d105bb6f085
+		summarizeBy: none
+		sourceColumn: Job Position Type
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Job Position Level'
+		dataType: string
+		lineageTag: 85fe327f-8e62-4f22-8cdc-058f391b2398
+		summarizeBy: none
+		sourceColumn: Job Position Level
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Years of Experience'
+		dataType: int64
+		formatString: 0
+		lineageTag: 209286f3-1f7e-48e7-95d2-e7c95c19edf0
+		summarizeBy: sum
+		sourceColumn: Years of Experience
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Job Skills'
+		dataType: string
+		lineageTag: f96e0d54-eb04-434e-b994-834658ef10c1
+		summarizeBy: none
+		sourceColumn: Job Skills
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Job Location'
+		dataType: string
+		lineageTag: 69009e78-f7fc-48b2-b759-8ecdc73b5bc4
+		summarizeBy: none
+		sourceColumn: Job Location
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Minimum Pay'
+		dataType: int64
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 02c0d3bf-a15d-4211-99f4-7d8d71a5d825
+		summarizeBy: sum
+		sourceColumn: Minimum Pay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Maximum Pay'
+		dataType: int64
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 016b2603-8c1b-4c38-b89d-cc2bb700e468
+		summarizeBy: sum
+		sourceColumn: Maximum Pay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Pay Rate'
+		dataType: string
+		lineageTag: eb7ca98e-895f-44d7-a76c-aee2cce568c1
+		summarizeBy: none
+		sourceColumn: Pay Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Number of Applicants'
+		dataType: int64
+		formatString: 0
+		lineageTag: b1a23fa9-76e9-476d-b625-7985cc2bfe1e
+		summarizeBy: sum
+		sourceColumn: Number of Applicants
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Name'
+		dataType: string
+		lineageTag: 1badcfd3-d887-4221-8b8a-665da74c449a
+		summarizeBy: none
+		sourceColumn: Company Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Company Industry'
+		dataType: string
+		lineageTag: 05931cda-f3c3-427d-b2be-9fab1fd2ce50
+		summarizeBy: none
+		sourceColumn: Company Industry
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Company Size'
+		dataType: string
+		lineageTag: b92455d9-42fe-478b-92d2-831f809ec254
+		summarizeBy: none
+		sourceColumn: Company Size
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Average Pay' = ('Job Postings'[Maximum Pay] + 'Job Postings'[Minimum Pay]) / 2
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a18ff3f3-0e1a-4dfb-b8b6-ff77ea290441
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition 'Job Postings-dbfbdf58-c0d1-457d-bb1c-cd7c3c4f7298' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:\Power BI Projects\3. Job Market Data Analysis\Assets\Datasets\job_postings.csv"),[Delimiter=",", Columns=18, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"", Int64.Type}, {"Job Posting ID", Int64.Type}, {"Job Posting Date", type date}, {"Job Title", type text}, {"Job Title Full", type text}, {"Job Title Additional Info", type text}, {"Job Position Type", type text}, {"Job Position Level", type text}, {"Years of Experience", Int64.Type}, {"Job Skills", type text}, {"Job Location", type text}, {"Minimum Pay", Int64.Type}, {"Maximum Pay", Int64.Type}, {"Pay Rate", type text}, {"Number of Applicants", Int64.Type}, {"Company Name", type text}, {"Company Industry", type text}, {"Company Size", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
